@@ -24,6 +24,7 @@ ul{
     align-items: center;
     padding: 5px 10px;
     margin: 10px;
+    position: relative;
 }
 
 a,a:visited{
@@ -36,8 +37,43 @@ a,a:visited{
     align-items: center;
 }
 
-a:hover{
-    background-color: var(--lightblue);
+a::before{
+    content: "";
+    width: 70%;
+    height: 3px;
+    position: absolute;
+    background-color: black;
+    bottom: 15%;
+    transform: scale(0);
+    animation: hoverbar-out 0.3s forwards;
+    transform-origin: 100%;
+}
+
+#navindex::before{
+    width: 35%;
+}
+
+#navsuggestions::before{
+    width: 68%;
+}
+
+#navlogin::before{
+    width: 35%;
+}
+
+ul:hover>a::before{
+    transform-origin: 0;
+    animation: hoverbar-in 0.3s forwards;
+}
+
+@keyframes hoverbar-in{
+    0%{transform: scale(0);}
+    100%{transform: scale(1);}
+}
+
+@keyframes hoverbar-out{
+    0%{transform: scale(1);}
+    100%{transform: scale(0);}
 }
 
 .question{
