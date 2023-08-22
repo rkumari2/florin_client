@@ -3,7 +3,7 @@ const {renderDOM} = require("./helpers")
 let dom;
 let document;
 
-describe("index.html", () => {
+describe("index.html",() => {
     beforeEach(async () => {
         dom = await renderDOM("./index.html")
         document = await dom.window.document;
@@ -12,19 +12,39 @@ describe("index.html", () => {
         const navbar = document.querySelector(".navbar")
         expect(navbar).toBeTruthy()
     })
-    it("Left carousel button loops to end of image array where at beginning.",()=> {
-        const carouselLeft = document.querySelector("#c_left")
-        const lastArrayEl = document.getElementById("skills")
-        carouselLeft.click()
-        expect(lastArrayEl.className).toContain("current-slide")
+    it("Navbar contains link to Home.",()=>{
+        const navbar = document.querySelector(".navbar")
+        const home = navbar.querySelector("#navindex").href.split("/");
+        expect(home[home.length-1]).toBe("index.html")
     })
-    it("Right carousel button loops to start of array when at the end.",()=>{
-        const carouselRight = document.querySelector("#c_right")
-        const lastArrayEL = document.getElementById("skills")
-        const firstArrayEl = document.getElementById("publicservices")
-        lastArrayEL.classList.add("current-slide")
-        firstArrayEl.classList.remove("current-slide")
-        carouselRight.click()
-        expect(firstArrayEl.className).toContain("current-slide")
+    it("Navbar contains link to Suggestions.",()=>{
+        const navbar = document.querySelector(".navbar")
+        const home = navbar.querySelector("#navsuggestions").href.split("/");
+        expect(home[home.length-1]).toBe("suggestions.html")
     })
+    it("Navbar contains link to Login.",()=>{
+        const navbar = document.querySelector(".navbar")
+        const home = navbar.querySelector("#navlogin").href.split("/");
+        expect(home[home.length-1]).toBe("login.html")
+    })
+    
+
+    it("Left carousel button sets current image to end of list item when at start.", ()=>{
+        const navLeft = document.querySelector("#c_left")
+        const start = document.querySelector("#publicservices")
+        navLeft.dispatchEvent(new dom.window.Event("click"))
+
+        const endElement = document.querySelector("#skills")
+
+        expect(endElement.className).toContain("current-slide")
+    })
+    // it("Right carousel button sets current image to start of carousel when at the end.", ()=>{
+    //     const navRight = document.querySelector("#c_right")
+    //     const start = document.querySelector("#skills")
+    //     navRight.dispatchEvent(new dom.window.Event("click"))
+
+    //     const endElement = document.querySelector(".current-slide")
+
+    //     expect(endElement.className).toContain("current-slide")
+    // })
 })

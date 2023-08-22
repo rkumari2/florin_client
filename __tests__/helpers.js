@@ -1,5 +1,6 @@
 const path = require('path')
 const jsdom = require('jsdom');
+// const carousel = require("../assets/navigation")
 const { JSDOM } = jsdom;
 
 const renderDOM = async (filename) => {
@@ -10,9 +11,8 @@ const renderDOM = async (filename) => {
   });
 
   return new Promise((resolve, _) => {
-    dom.window.document.addEventListener('DOMContentLoaded', () => {
-      resolve(dom);
-    });
+    dom.window.document.addEventListener('DOMContentLoaded', () => resolve(dom));
+    // dom.window.document.querySelector("#c_left",()=> carousel.left_input())
   });
 };
 
