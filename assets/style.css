@@ -136,6 +136,7 @@ body *{
     flex-direction: column;
     /* height: 600px; */
     background-color: whitesmoke;
+    padding-bottom: 120px;
 }
 
 .lower-container>h2{

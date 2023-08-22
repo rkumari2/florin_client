@@ -25,7 +25,6 @@ export function left_input(){
     }
     currentSlide.classList.remove("current-slide")
     nextSlide.classList.add("current-slide")
-    return nextSlide
 }
 
 export function right_input(){
@@ -46,5 +45,3 @@ export function right_input(){
 
     updateClasses(currentSlide,nextSlide)
 }
-
-// export { change_page ,left_input,right_input}
