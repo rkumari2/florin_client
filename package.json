@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"watchify index.js -o bundle.js --debug\" \"live-server\"",
-    "start": "watchify index.js -o bundle.js",
+    "dev": "concurrently \"watchify ./assets/index.js -o bundle.js --debug\" \"live-server\"",
+    "start": "watchify ./assets/index.js -o bundle.js",
     "test": "jest --watchAll --verbose",
     "coverage": "jest --coverage"
   },

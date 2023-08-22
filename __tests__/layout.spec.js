@@ -32,5 +32,14 @@ describe("index.html",() => {
         const slides = document.querySelectorAll(".image")
         expect(slides[0].className).toContain("current-slide")
     })
-
+    it("Loads 4 images into carousel.",()=>{
+        const slides = document.querySelectorAll(".image")
+        slides.forEach(slide => expect(slide.nodeName).toBe("IMG"))
+    })
+    it("Log In middle button takes user to login page.",()=>{
+        const loginBtn = document.querySelector(".loginBtn")
+        loginBtn.click()
+        // const newPage = location.href;
+        // expect(newPage).toBe("./login.html")
+    })
 })

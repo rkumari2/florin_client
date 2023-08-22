@@ -1,4 +1,4 @@
-import { change_page ,left_input,right_input} from "./navigation.js"
+const { change_page ,left_input,right_input} = require("./navigation")
 
 window.addEventListener("resize", () => width = window.innerWidth)
 

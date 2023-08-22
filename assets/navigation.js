@@ -1,13 +1,13 @@
-export function change_page(page){
+function change_page(page){
     location.href = `${page}.html`;
 }
 
-export function updateClasses(curr,next){
+function updateClasses(curr,next){
     curr.classList.remove("current-slide")
     next.classList.add("current-slide")
 }
 
-export function left_input(){
+function left_input(){
     const imgWrapper = document.getElementById("img-wrapper");
     const slides = Array.from(imgWrapper.children);
     const currentSlide = imgWrapper.querySelector(".current-slide")
@@ -27,7 +27,7 @@ export function left_input(){
     nextSlide.classList.add("current-slide")
 }
 
-export function right_input(){
+function right_input(){
     const imgWrapper = document.getElementById("img-wrapper");
     const slides = Array.from(imgWrapper.children);
     const currentSlide = imgWrapper.querySelector(".current-slide")
@@ -45,3 +45,5 @@ export function right_input(){
 
     updateClasses(currentSlide,nextSlide)
 }
+
+module.exports = {change_page,left_input,right_input}
