@@ -22,68 +22,6 @@ body *{
     font-family: 'Oswald', sans-serif;
 }
 
-header{
-    display: flex;
-    background-color: var(--lightestblue);
-    justify-content: space-between;
-    height: 80px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 50;
-}
-
-header>img{
-    padding: 20px 5px;
-}
-
-.navbar{
-    display: flex;
-}
-
-ul{
-    height: 60%;
-    width: 130px;
-    display: flex;
-    align-items: center;
-    padding: 5px 10px;
-    margin: 10px;
-}
-
-a,a:visited{
-    text-decoration: none;
-    color: black;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-a:hover{
-    background-color: var(--lightblue);
-}
-
-.question{
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--darkgreyblue);
-    color: whitesmoke;
-    border-radius: 50%;
-    margin: 10px 30px 10px 30px ;
-    transition: 0.1s ease-in-out;
-}
-
-.question:hover{
-    background-color: var(--lightblue);
-    box-shadow: 0 0 20px 5px whitesmoke;
-    color: black;
-    transition: 0.1s ease-in-out;
-}
-
 .carousel{
     position: relative;
     width: 100%;
@@ -239,23 +177,6 @@ a:hover{
     height: 100%;
     background: rgb(255,255,255);
     background: linear-gradient(0deg, rgba(255,255,255,0) 65%, rgb(41, 52, 56) 100%);
-}
-
-footer{
-    width: 100%;
-    height: 30px;
-    background-color: var(--darkgreyblue);
-    position: relative;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: whitesmoke;
-}
-
-footer>*{
-    font-size: 1rem;
-    padding: 0px 20px 0px 20px;
 }
 
 @media only screen and (max-width: 1210px){
