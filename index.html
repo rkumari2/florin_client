@@ -4,22 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Florin Council</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Special+Elite&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/style.css">
-    <script src="assets/carousel.js" defer></script>
+    <script type="module" src="assets/home_page.js" defer></script>
 </head>
 <body>
     <header>
-        <img src="" alt="Florin County Council">
+        <img src="" alt="Florin County Council",id="council-logo">
         <div class="navbar">
             <ul class="nav"><a href="./index.html">Home</a></ul>
-            <ul class="nav"><a href="../suggestions/suggestions.html">Suggestions</a></ul>
-            <ul class="nav"><a href="../login/login/html">Log In</a></ul>
+            <ul class="nav"><a href="./suggestions.html">Suggestions</a></ul>
+            <ul class="nav"><a href="./login.html">Log In</a></ul>
             <div class="question">?</div>
         </div>
     </header>
     <section class="carousel">
-        <p>Emotional text about the issues the council is facing and how they affect the community.</p>
-        <div class="loginBtn">Log In</div>
+        <div class="bgimage">
+            <img src="./assets/sigmund-4khkLZuJEYI-unsplash.jpg" alt="background">
+        </div>
+        <div class="middle_page">
+            <p>Emotional text about the issues the council is facing and how they affect the community.</p>
+            <div class="loginBtn">Log In</div>
+        </div>
         <div id="img-wrapper">
             <img src="./assets/sigmund-4khkLZuJEYI-unsplash.jpg" alt="image1" id="publicservices" class="image current-slide">
             <img src="./assets/nick-fewings--2lJGRIY5P0-unsplash.jpg" alt="image2" id="recycling" class="image">
@@ -32,10 +40,22 @@
     <div class="lower-container">
         <h2>Bettering Our Neighbourhood</h2>
         <div class="cards">
-            <div class="card">Public Services</div>
-            <div class="card">Recycling</div>
-            <div class="card">Landscape</div>
-            <div class="card">Skills</div>
+            <div class="card" id="card1">
+                <img src="./assets/refhad-SyH6CiIjzs8-unsplash.jpg" alt="binman">
+                <h4>Public Services</h4>
+            </div>
+            <div class="card" id="card2">
+                <img src="./assets/john-cameron-7zocFMzvbpc-unsplash.jpg" alt="rubbish">
+                <h4>Recycling</h4>
+            </div>
+            <div class="card" id="card3">
+                <img src="./assets/samuel-girven-vOZfwNnE8yA-unsplash.jpg" alt="nature">
+                <h4>Landscape</h4>
+            </div>
+            <div class="card" id="4">
+                <img src="./assets/aedrian-BshM9VkzGw8-unsplash.jpg" alt="pottery">
+                <h4>Skills</h4>
+            </div>
         </div>
     </div>
     <footer>
