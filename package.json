@@ -4,15 +4,25 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "concurrently \"watchify ./home_page/index.js -o bundle.js --debug\" \"live-server\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"watchify index.js -o bundle.js --debug\" \"live-server\"",
+    "start": "watchify index.js -o bundle.js",
+    "test": "jest --watchAll --verbose",
+    "coverage": "jest --coverage"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
+  "devDependencies": {
     "concurrently": "^8.2.0",
+    "jest": "^29.6.3",
+    "jest-environment-jsdom": "^29.6.3",
+    "jsdom": "^22.1.0",
     "live-server": "^1.2.2",
     "watchify": "^4.0.0"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "./__tests__/helpers.js"
+    ]
   }
 }
