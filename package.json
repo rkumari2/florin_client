@@ -8,6 +8,7 @@
     "start": "watchify ./assets/index.js -o bundle.js",
     "test": "jest --watchAll --verbose",
     "coverage": "jest --coverage"
+
   },
   "keywords": [],
   "author": "",
