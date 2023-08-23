@@ -1,3 +1,27 @@
+:root{
+    --darkgreyblue: #425370;
+    --tealblue: #7a87d3;
+    --lightblue: #acc3f8;
+    --greyblue: #5d74db;
+    --softpink: #ff8995;
+    --purpleblue: #7b8eff;
+    --hardblue: #465eec;
+    --lightestblue: rgb(211, 229, 231);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+body *{
+    font-family: 'Oswald', sans-serif;
+}
+
 header{
     display: flex;
     background-color: var(--lightestblue);
