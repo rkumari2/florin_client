@@ -41,7 +41,8 @@ body *{
     position: relative;
     align-items: center;
     justify-content: space-between;
-    padding: 0px 200px 0px 100px ;
+    gap: 20px;
+    padding: 20px 200px 0px 100px ;
     height: 80px;
 }
 
@@ -57,10 +58,7 @@ body *{
     align-items: center;
     justify-content: center;
     padding: 0;
-    margin: 0;
-    position: absolute;
-    right: 100px;
-    top: 10px;
+    margin: 20px 0;
 }
 
 #search{
@@ -75,15 +73,18 @@ body *{
 #searchSubmit{
     width: 100px;
     height: 82px;
-    transform: translateY(-4px);
+    transform: translateY(-1px);
     background-color: var(--lightestblue);
     border: none;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    transition: 0.1s ease-in-out;
 }
+
 
 #searchSubmit:hover{
     cursor: pointer;
     background-color: var(--lightblue);
+    transition: 0.1s ease-in-out;
 }
 
 .upper-container>h3{
@@ -98,7 +99,8 @@ body *{
 }
 
 .card{
-    background-color: var(--lightestblue);
+    background-color: var(--darkgreyblue);
+    color: whitesmoke;
     width: 18%;
     height: 100px;
     display: flex;
@@ -117,7 +119,7 @@ body *{
     content: "";
     width: 100px;
     height: 3px;
-    background-color: black;
+    background-color: white;
     position: absolute;
     bottom: 25px;
     animation: hoverbar-out 0.3s forwards;
@@ -157,6 +159,11 @@ body *{
 
 .target{
     background-color: var(--lightblue);
+    color: black;
+}
+
+.target>h4::before{
+    background-color: black;
 }
 
 .lower-container{
@@ -244,6 +251,7 @@ body *{
     height: 60px;
     font-size: 2rem;
     margin-top: 30px;
+    padding-left: 12px ;
     transform: translate(40px,-15px);
 }
 
@@ -259,10 +267,13 @@ body *{
     height: 70px;
     font-size: 2rem;
     background-color: var(--lightestblue);
-    border: solid 1px black;
+    border: none;
+    transition: 0.1s ease-in-out;
 }
 
 #submit:hover{
     cursor:pointer;
     background-color: var(--lightblue);
+    transition: 0.1s ease-in-out;
+
 }
