@@ -1,7 +1,12 @@
 function changeTarget(card){
     const oldCard = document.querySelector(".target");
-    oldCard.classList.remove("target")
-    card.classList.add("target")
+
+    if(oldCard === null){
+        card.classList.add("target")
+    }else{
+        oldCard.classList.remove("target")
+        card.classList.add("target")
+    }
 }
 
 function createPost(id,title,category,desc){
@@ -41,6 +46,15 @@ function resolveCategory(cat){
     }
 }
 
+function destroyPosts(){
+    const posts = document.getElementsByClassName("post")
+    if(posts.length > 0){
+        while(posts.length > 0){
+            posts[0].parentNode.removeChild(posts[0])
+        }
+    }
+}
+
 // GET ALL SUGGESTIONS
 async function loadAllSuggestions(){
     const suggestionsContainer = document.querySelector(".suggestions")
@@ -53,6 +67,23 @@ async function loadAllSuggestions(){
     })
 }
 
+async function loadPostsFromCategory(){
+    
+    const suggCont = document.querySelector(".suggestions")
+    const topic = document.querySelector(".target")
+    const postIdx = resolveCategory(topic.id)
+
+    const response = await fetch(`http://localhost:3000/categories/${postIdx}/suggestions`)
+    const posts = await response.json()
+
+    posts.forEach(post => {
+        const newPost = createPost(post.id,post.title,post.category_name,post.content)
+        suggCont.appendChild(newPost)
+    })
+
+    
+}
+
 async function postSuggestion(e){
     e.preventDefault()
 
@@ -60,29 +91,27 @@ async function postSuggestion(e){
     const category = e.target.category.value;
     const descEntry = e.target.content.value;
 
-    console.log(category)
-
-    const posts = document.getElementsByClassName("post")
+    // const posts = document.getElementsByClassName("post")
 
     const catIdx = resolveCategory(category);
 
-    const options = {
-        method:"POST",
-        headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({
-            category_name:category,
-            title:titleEntry,
-            content:descEntry,
-            user_id:1
-        })
-    }
-    const response = await fetch(`http://localhost:3000/categories/${catIdx}/suggestions`,options)
-    if(posts.length > 0){
-        while(posts.length > 0){
-            posts[0].parentNode.removeChild(posts[0])
+    if(titleEntry.trim().length > 0 && descEntry.trim().length >0){
+        const options = {
+            method:"POST",
+            headers:{"Content-Type":"application/json"},
+            body:JSON.stringify({
+                category_name:category,
+                title:titleEntry,
+                content:descEntry,
+                user_id:1
+            })
         }
+        const response = await fetch(`http://localhost:3000/categories/${catIdx}/suggestions`,options)
+        destroyPosts()
+        loadAllSuggestions()
     }
-    loadAllSuggestions()
+    e.target.title.value = "";
+    e.target.content.value = "";
 }
 
-module.exports = {changeTarget,loadAllSuggestions, postSuggestion}
+module.exports = {changeTarget,loadAllSuggestions, postSuggestion,loadPostsFromCategory,destroyPosts}

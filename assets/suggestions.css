@@ -218,14 +218,6 @@ body *{
     position: relative;
 }
 
-/* .post-suggestion::before{
-    content: "";
-    height: 700px;
-    width: 1.8px;
-    position: absolute;
-    background-color: black;
-} */
-
 .post-suggestion>*{
     padding-left: 50px;
     line-height: 5px;
