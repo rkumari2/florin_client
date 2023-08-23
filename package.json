@@ -7,6 +7,7 @@
     "dev": "concurrently \"watchify ./assets/index.js -o bundle.js --debug\" \"live-server\"",
     "start": "watchify ./assets/index.js -o bundle.js",
     "test": "jest --watchAll --verbose",
+    "test-login": "jest ./__tests__/form.spec.js",
     "coverage": "jest --coverage"
 
   },
