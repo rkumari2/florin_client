@@ -17,10 +17,20 @@ body{
     flex-direction: column;
     padding-top: 80px;
     background-color: whitesmoke;
+    overflow-x: hidden;
 }
 
 body *{
     font-family: 'Oswald', sans-serif;
+}
+
+.main-page{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: red;
 }
 
 .upper-container{
@@ -35,6 +45,10 @@ body *{
     justify-content: space-between;
     padding: 0px 200px 0px 100px ;
     height: 80px;
+}
+
+.topbar>h2{
+    font-size: 2.8rem;
 }
 
 .searchbar{
@@ -68,11 +82,33 @@ body *{
 }
 
 .upper-container>h3{
-    padding: 0 100px;
+    padding: 0 170px;
+    font-size: 2.5rem;
 }
 
 .cards{
     display: flex;
     justify-content: space-evenly;
     padding: 20px 50px;
+}
+
+.card{
+    background-color: whitesmoke;
+    width: 18%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.target{
+    background-color: var(--lightblue);
+}
+
+.lower-container{
+    height: 800px;
+    background-color: #465eec;
+    flex-grow: 1;
 }
