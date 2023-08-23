@@ -1,0 +1,78 @@
+:root{
+    --darkgreyblue: #425370;
+    --tealblue: #7a87d3;
+    --lightblue: #acc3f8;
+    --greyblue: #5d74db;
+    --softpink: #ff8995;
+    --purpleblue: #7b8eff;
+    --hardblue: #465eec;
+    --lightestblue: rgb(211, 229, 231);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+    background-color: whitesmoke;
+}
+
+body *{
+    font-family: 'Oswald', sans-serif;
+}
+
+.upper-container{
+    width: 100vw;
+    background-color: #425370;
+}
+
+.topbar{
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 200px 0px 100px ;
+    height: 80px;
+}
+
+.searchbar{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+#search{
+    width: 200px;
+    height: 40px;
+    font-size: 1.5rem;
+    border: none;
+}
+
+#searchSubmit{
+    width: 75px;
+    height: 42px;
+    transform: translateY(-2px);
+    background-color: whitesmoke;
+    border: none;
+    font-size: 1.2rem;
+}
+
+#searchSubmit:hover{
+    cursor: pointer;
+    background-color: var(--lightblue);
+}
+
+.upper-container>h3{
+    padding: 0 100px;
+}
+
+.cards{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 50px;
+}

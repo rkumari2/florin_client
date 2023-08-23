@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Special+Elite&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/suggestions.css">
     <link rel="stylesheet" href="./assets/topbottom.css">
     <script src="./bundle.js" defer></script>
 </head>
@@ -24,26 +24,35 @@
 
     <section class="upper-container">
         <div class="topbar">
-            <h2>suggestions</h2>
+            <h2>Suggestions</h2>
             <div class="searchbar">
                 <form id="search-form">
-                    <input type="text" id="search" name="search" required>
-                    <input type="submit" value="Submit">
+                    <input type="text" id="search" name="search" placeholder="Search" required>
+                    <input type="submit" value="Submit" id="searchSubmit">
                 </form>
             </div>
-            <h3>Topics</h3>
-            <div class="cards">
-                <div class="card">Public Services</div>
-                <div class="card">Recycling</div>
-                <div class="card">Landscape</div>
-                <div class="card">Skills Share</div>
-            </div>
+        </div>
+        <h3>Topics</h3>
+        <div class="cards">
+            <div class="card">Public Services</div>
+            <div class="card">Recycling</div>
+            <div class="card">Landscape</div>
+            <div class="card">Skills Share</div>
         </div>
     </section>
     <section class="lower-container">
         <div class="suggestions"></div>
-    </section>
+        <div class="post-suggestion">
+            <h3>Post a Suggestion</h3>
+            <p id="guidance">Guidance</p>
+            <form id="post">
+                <input type="text" id="title" name="title" placeholder="Title" required>
+                <textarea name="content" id="content" cols="30" rows="10" placeholder="Suggestion" required></textarea>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
 
+    </section>
 
     <footer>
         <img src="" alt="littlelogo">
