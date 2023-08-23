@@ -34,7 +34,8 @@ header{
 }
 
 header>img{
-    padding: 20px 5px;
+    padding: 20px 100px;
+    transform: scale(150%);
 }
 
 .navbar{
@@ -85,6 +86,10 @@ a::before{
     width: 35%;
 }
 
+#navregister::before{
+    width: 45%;
+}
+
 ul:hover>a::before{
     transform-origin: 0;
     animation: hoverbar-in 0.3s forwards;
@@ -101,15 +106,15 @@ ul:hover>a::before{
 }
 
 .question{
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--darkgreyblue);
     color: whitesmoke;
     border-radius: 50%;
-    margin: 10px 30px 10px 30px ;
+    margin: 15px 30px 10px 30px ;
     transition: 0.1s ease-in-out;
 }
 

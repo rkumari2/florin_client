@@ -30,12 +30,10 @@ body *{
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: red;
 }
 
 .upper-container{
     width: 100vw;
-    background-color: #425370;
 }
 
 .topbar{
@@ -49,31 +47,38 @@ body *{
 
 .topbar>h2{
     font-size: 2.8rem;
+    padding-left: 70px;
+    line-height: 5px;
 }
 
 .searchbar{
-    height: 100px;
+    height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0;
     margin: 0;
+    position: absolute;
+    right: 100px;
+    top: 10px;
 }
 
 #search{
-    width: 200px;
-    height: 40px;
-    font-size: 1.5rem;
+    width: 400px;
+    height: 80px;
+    font-size: 2rem;
     border: none;
+    padding-left: 20px;
+    margin-right: 10px;
 }
 
 #searchSubmit{
-    width: 75px;
-    height: 42px;
-    transform: translateY(-2px);
-    background-color: whitesmoke;
+    width: 100px;
+    height: 82px;
+    transform: translateY(-4px);
+    background-color: var(--lightestblue);
     border: none;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
 }
 
 #searchSubmit:hover{
@@ -93,7 +98,7 @@ body *{
 }
 
 .card{
-    background-color: whitesmoke;
+    background-color: var(--lightestblue);
     width: 18%;
     height: 100px;
     display: flex;
@@ -101,6 +106,53 @@ body *{
     align-items: center;
     font-size: 2rem;
     cursor: pointer;
+    position: relative;
+}
+
+.card>h4{
+    font-weight: normal;
+}
+
+.card>h4::before{
+    content: "";
+    width: 100px;
+    height: 3px;
+    background-color: black;
+    position: absolute;
+    bottom: 25px;
+    animation: hoverbar-out 0.3s forwards;
+    transform-origin: 100%;
+}
+
+.card:hover>h4::before{
+    transform-origin: 0;
+    animation: hoverbar-in 0.3s forwards;
+}
+
+#publicservices>h4::before{
+    width: 160px;
+}
+
+#recycling>h4::before{
+    width: 103px;
+}
+
+#landscape>h4::before{
+    width: 110px;
+}
+
+#skills>h4::before{
+    width: 125px;
+}
+
+@keyframes hoverbar-in{
+    0%{transform: scale(0);}
+    100%{transform: scale(1);}
+}
+
+@keyframes hoverbar-out{
+    0%{transform: scale(1);}
+    100%{transform: scale(0);}
 }
 
 .target{
@@ -109,6 +161,94 @@ body *{
 
 .lower-container{
     height: 800px;
-    background-color: #465eec;
-    flex-grow: 1;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.suggestions{
+    width: 50%;
+    margin: 0;
+    padding: 0;
+    line-height:5px;
+}
+
+
+.suggestions>h5{
+    font-size: 2rem;
+    padding-left: 170px;
+}
+
+.suggestions>p{
+    padding-left: 200px;
+}
+
+.post-suggestion{
+    width: 50%;
+    position: relative;
+}
+
+.post-suggestion::before{
+    content: "";
+    height: 700px;
+    width: 1.8px;
+    position: absolute;
+    background-color: black;
+}
+
+.post-suggestion>*{
+    padding-left: 50px;
+    line-height: 5px;
+}
+
+.post-suggestion>h3{
+    font-size: 2.5rem;
+    margin-top: 40px;
+}
+
+#guidance{
+    cursor: pointer;
+    text-decoration: underline;
+    padding-left: 50px;
+    font-size: 1.3rem;
+}
+
+#guidance:hover{
+    color: #425370;
+}
+
+#post{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+}
+
+#title,
+#content{
+    width: 80%;
+    padding: 5px 20px;
+}
+
+#submit{
+    width: 200px;
+    height: 70px;
+    font-size: 2rem;
+    background-color: var(--lightestblue);
+    border: solid 1px black;
+}
+
+#submit:hover{
+    cursor:pointer;
+    background-color: var(--lightblue);
+}
+
+#title{
+    height: 60px;
+    font-size: 2rem;
+    margin-top: 30px;
+}
+
+#content{
+    font-size: 1.5rem;
 }

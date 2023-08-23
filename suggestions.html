@@ -13,11 +13,12 @@
 </head>
 <body>
     <header>
-        <img src="" alt="Florin County Council",id="council-logo">
+        <img src="./assets/images/florin_logo.png" alt="Florin County Council",id="council-logo">
         <div class="navbar">
             <ul class="nav"><a href="./index.html"  id="navindex">Home</a></ul>
             <ul class="nav"><a href="./suggestions.html" id="navsuggestions">Suggestions</a></ul>
             <ul class="nav"><a href="./login.html" id="navlogin">Log In</a></ul>
+            <ul class="nav"><a href="./register.html" id="navregister">Register</a></ul>
             <div class="question">?</div>
         </div>
     </header>
@@ -34,21 +35,26 @@
             </div>
             <h3>Topics</h3>
             <div class="cards">
-                <div class="card target">Public Services</div>
-                <div class="card">Recycling</div>
-                <div class="card">Landscape</div>
-                <div class="card">Skills Share</div>
+                <div class="card target" id="publicservices"><h4>Public Services</h4></div>
+                <div class="card" id="recycling"><h4>Recycling</h4></div>
+                <div class="card" id="landscape"><h4>Landscape</h4></div>
+                <div class="card" id="skills"><h4>Skills Share</h4></div>
             </div>
         </section>
         <section class="lower-container">
-            <div class="suggestions"></div>
+            <div class="suggestions">
+                <h5>Title</h5>
+                <p>DESCRIPTION</p>
+                <h5>Title</h5>
+                <p>DESCRIPTION</p>
+            </div>
             <div class="post-suggestion">
                 <h3>Post a Suggestion</h3>
                 <p id="guidance">Guidance</p>
                 <form id="post">
                     <input type="text" id="title" name="title" placeholder="Title" required>
                     <textarea name="content" id="content" cols="30" rows="10" placeholder="Suggestion" required></textarea>
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" id="submit">
                 </form>
             </div>
     
