@@ -206,6 +206,7 @@ body *{
     margin-top: 40px;
 }
 
+
 #guidance{
     cursor: pointer;
     text-decoration: underline;
@@ -220,14 +221,37 @@ body *{
 #post{
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    /* gap: 10px; */
     align-items: center;
 }
 
-#title,
+#top-inputs{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#category{
+    width: 150px;
+    height: 65px;
+    font-size: 1.3rem;
+    transform: translate(-45px, 0px);
+}
+
+#title{
+    width: 68%;
+    height: 60px;
+    font-size: 2rem;
+    margin-top: 30px;
+    transform: translate(40px,-15px);
+}
+
 #content{
     width: 80%;
     padding: 5px 20px;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
 }
 
 #submit{
@@ -241,14 +265,4 @@ body *{
 #submit:hover{
     cursor:pointer;
     background-color: var(--lightblue);
-}
-
-#title{
-    height: 60px;
-    font-size: 2rem;
-    margin-top: 30px;
-}
-
-#content{
-    font-size: 1.5rem;
 }

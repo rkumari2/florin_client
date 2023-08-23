@@ -52,7 +52,15 @@
                 <h3>Post a Suggestion</h3>
                 <p id="guidance">Guidance</p>
                 <form id="post">
-                    <input type="text" id="title" name="title" placeholder="Title" required>
+                    <div id="top-inputs">
+                        <input type="text" id="title" name="title" placeholder="Title" required>
+                        <select name="Category" id="category" required>
+                            <option value="publicservices">Public Services</option>
+                            <option value="recycling">Recycling</option>
+                            <option value="landscape">Landscape</option>
+                            <option value="skills">Skill Share</option>
+                        </select>
+                    </div>
                     <textarea name="content" id="content" cols="30" rows="10" placeholder="Suggestion" required></textarea>
                     <input type="submit" value="Submit" id="submit">
                 </form>
@@ -61,7 +69,7 @@
         </section>
     </div>
     <footer>
-        <img src="" alt="littlelogo">
+        <!-- <img src="./assets/images/florin_logo.png" alt="littlelogo"> -->
         <h3>Florin Council</h3>
     </footer>
 </body>

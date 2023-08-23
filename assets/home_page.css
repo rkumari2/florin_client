@@ -90,7 +90,7 @@ body *{
 }
 
 #landscape{
-    transform: translateY(-20%) translateX(30px);
+    transform: translateY(-30%) translateX(30px);
 }
 
 #skills{
@@ -167,8 +167,7 @@ body *{
 
 .card>img{
     object-fit: contain;
-    height: 130%;
-    width: auto;
+    width: 100%;
     transform: translateY(-5%);
 }
 
@@ -197,6 +196,17 @@ body *{
     transform: scale(0);
     animation: hoverbar-out 0.3s forwards;
     transform-origin: 100%;
+}
+#card1>img{
+    transform: translateY(-150px);
+}
+
+#card3>img{
+    transform: translateY(-100px);
+}
+
+#card4>img{
+    transform: translateY(-140px);
 }
 
 #card2>h4::before{

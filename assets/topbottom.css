@@ -144,3 +144,7 @@ footer>*{
     font-size: 1rem;
     padding: 0px 20px 0px 20px;
 }
+
+footer>img{
+    transform: scale(0.15);
+}
