@@ -28,23 +28,50 @@ describe("index.html",() => {
         expect(home[home.length-1]).toBe("login.html")
     })
     
-
-    it("Left carousel button sets current image to end of list item when at start.", ()=>{
-        const navLeft = document.querySelector("#c_left")
-        const start = document.querySelector("#publicservices")
-        navLeft.dispatchEvent(new dom.window.Event("click"))
-
-        const endElement = document.querySelector("#skills")
-
-        expect(endElement.className).toContain("current-slide")
+    it("Image 0 loads with 'current-slide' class.",()=>{
+        const slides = document.querySelectorAll(".image")
+        expect(slides[0].className).toContain("current-slide")
     })
-    // it("Right carousel button sets current image to start of carousel when at the end.", ()=>{
-    //     const navRight = document.querySelector("#c_right")
-    //     const start = document.querySelector("#skills")
-    //     navRight.dispatchEvent(new dom.window.Event("click"))
+    it("Loads 4 images into carousel.",()=>{
+        const slides = document.querySelectorAll(".image")
+        slides.forEach(slide => expect(slide.nodeName).toBe("IMG"))
+    })
+    it("Log In middle button takes user to login page.",()=>{
+        const loginBtn = document.querySelector(".loginBtn")
+        loginBtn.click()
+    })
+    it("Moves class 'current-slide' to next sibling image.",()=>{
+        const slides = document.querySelectorAll(".image")
+        const rightBtn = document.querySelector("#c_right")
+        expect(slides[0].className).toContain("current-slide")
+        rightBtn.click()
+        expect(slides[1].className).toContain("current-slide")
+    })
+    it("Moves class 'current-slide' to previous sibling image",()=>{
+        const slides = document.querySelectorAll(".image")
+        const leftBtn = document.querySelector("#c_left")
+        slides[2].classList.add("current-slide")
+        slides[0].classList.remove("current-slide")
 
-    //     const endElement = document.querySelector(".current-slide")
+        leftBtn.click()
+        expect(slides[2].className).not.toContain("current-slide")
+        expect(slides[1].className).toContain("current-slide")
+    })
+    it("Moves class 'current-slide' to last object in array when moving left from the start.",()=>{
+        const slides = document.querySelectorAll(".image")
+        const leftBtn = document.querySelector("#c_left")
+        expect(slides[0].className).toContain("current-slide")
+        leftBtn.click()
+        expect(slides[3].className).toContain("current-slide")
+    })
+    it("Moves class 'current-slide' to first object in array when moving right from the end.",()=>{
+        const slides = document.querySelectorAll(".image")
+        const rightBtn = document.querySelector("#c_right")
+        slides[3].classList.add("current-slide")
+        slides[0].classList.remove("current-slide")
 
-    //     expect(endElement.className).toContain("current-slide")
-    // })
+        rightBtn.click()
+        expect(slides[3].className).not.toContain("current-slide")
+        expect(slides[0].className).toContain("current-slide")
+    })
 })

@@ -40,17 +40,19 @@ body *{
     transform: translate(-50%);
     top: 75%;
     z-index: 6;
-    background-color: var(--lightestblue);
+    background-color: whitesmoke;
     padding: 20px 50px;
     font-size: 2rem;
     cursor: pointer;
     font-weight: bold;
     letter-spacing: 2px;
     border-radius: 2px;
+    transition: 0.1s ease-in-out;
 }
 
 .loginBtn:hover{
     background-color: var(--lightblue);
+    transition: 0.1s ease-in-out;
 }
 
 .middle_page>p{
@@ -136,6 +138,7 @@ body *{
     flex-direction: column;
     /* height: 600px; */
     background-color: whitesmoke;
+    padding-bottom: 120px;
 }
 
 .lower-container>h2{
