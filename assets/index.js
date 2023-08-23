@@ -1,5 +1,5 @@
 const { change_page ,left_input,right_input} = require("./navigation")
-const {changeTarget} = require("./suggestions")
+const {changeTarget,loadAllSuggestions,postSuggestion} = require("./suggestions")
 
 window.addEventListener("resize", () => width = window.innerWidth)
 
@@ -14,5 +14,7 @@ if(window.location.href.includes("index.html")){
 
 // SUGGESTIONS PAGE
 if(window.location.href.includes("suggestions.html")){
-    document.querySelectorAll(".card").forEach(card => card.addEventListener("click", ()=> changeTarget(card)))
+    document.querySelectorAll(".card").forEach(card => card.addEventListener("click", async () => changeTarget(card)))
+    window.addEventListener("load", async ()=> loadAllSuggestions())
+    document.getElementById("post").addEventListener("submit",postSuggestion)
 }
