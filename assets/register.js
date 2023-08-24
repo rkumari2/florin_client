@@ -22,7 +22,7 @@ document.getElementById("form").addEventListener("submit", async (e) => {
         })
     }
 
-    const response = await fetch("http://localhost:3000/users/register", options);
+    const response = await fetch("https://florin-server-ijt6.onrender.com/users/register", options);
     const data = await response.json();
 
     if (response.status == 201) {

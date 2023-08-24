@@ -48,7 +48,7 @@ const disableLogin = (username) => {
 }
 
 const getUsername = async (user_id) => {
-    const response = await fetch(`http://localhost:3000/users`)
+    const response = await fetch(`https://florin-server-ijt6.onrender.com/users`)
     const users = await response.json()
     let username;
     for(u in users){
@@ -59,7 +59,7 @@ const getUsername = async (user_id) => {
 }
 
 const getUser = async (user_id) => {
-    const response = await fetch(`http://localhost:3000/users`)
+    const response = await fetch(`https://florin-server-ijt6.onrender.com/users`)
     const users = await response.json()
     let username;
     for(u in users){
@@ -74,7 +74,7 @@ const logOut = async () => {
 
     let user;
 
-    const response = await fetch("http://localhost:3000/users/tokens")
+    const response = await fetch("https://florin-server-ijt6.onrender.com/users/tokens")
     const respToken = await response.json()
     for(t in respToken){
         if (respToken[t].token == localToken){
@@ -93,7 +93,7 @@ const deleteCurrentUser = async (user) => {
         headers:{"Content-Type":"application/json"},
         body:null
     }
-    const response = await fetch(`http://localhost:3000/users/tokens/${user.id}`,options)
+    const response = await fetch(`https://florin-server-ijt6.onrender.com/users/tokens/${user.id}`,options)
 }
 
 const checkIfGuest = () => {

@@ -60,7 +60,7 @@ async function findBySubString(e){
     destroyPosts();
     const suggCont = document.querySelector(".suggestions")
     const subString = e.target.search.value;
-    const response = await fetch("http://localhost:3000/suggestions")
+    const response = await fetch("https://florin-server-ijt6.onrender.com/suggestions")
     const posts = await response.json()
 
     const queriedPosts = [];
@@ -85,7 +85,7 @@ async function loadAllSuggestions(){
     const suggestionsContainer = document.querySelector(".suggestions")
 
     try {
-        const response = await fetch("http://localhost:3000/suggestions")
+        const response = await fetch("https://florin-server-ijt6.onrender.com/suggestions")
         const posts = await response.json()
         posts.forEach(post => {
         const newPost = createPost(post.id,post.title,post.category_name,post.content)
@@ -104,7 +104,7 @@ async function loadPostsFromCategory(){
     const topic = document.querySelector(".target")
     const postIdx = resolveCategory(topic.id)
 
-    const response = await fetch(`http://localhost:3000/categories/${postIdx}/suggestions`)
+    const response = await fetch(`https://florin-server-ijt6.onrender.com/categories/${postIdx}/suggestions`)
     const posts = await response.json()
 
     posts.forEach(post => {
@@ -117,7 +117,7 @@ async function loadPostsFromCategory(){
 
 async function getUserId(){
     const sessionToken = sessionStorage.getItem("token")
-    const response = await fetch("http://localhost:3000/users/tokens")
+    const response = await fetch("https://florin-server-ijt6.onrender.com/users/tokens")
     const tokens = await response.json()
 
     for(t in tokens){
@@ -151,7 +151,7 @@ async function postSuggestion(e){
                 user_id:userId
             })
         }
-        const response = await fetch(`http://localhost:3000/categories/${catIdx}/suggestions`,options)
+        const response = await fetch(`https://florin-server-ijt6.onrender.com/categories/${catIdx}/suggestions`,options)
         const resp = response.json()
         destroyPosts()
         loadAllSuggestions()
