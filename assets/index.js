@@ -2,12 +2,13 @@ const {left_input,right_input} = require("./navigation")
 const {checkLoggedIn} = require("./userLoggedIn")
 const {changeTarget,findBySubString,loadAllSuggestions,postSuggestion,loadPostsFromCategory,destroyPosts} = require("./suggestions")
 
+window.addEventListener("DOMContentLoaded", async () => checkLoggedIn())
+
 // HOME PAGE
 if(window.location.href.includes("index.html") || !(location.href.includes("html"))){
     document.getElementById("c_right").addEventListener("click", () => right_input())
     document.getElementById("c_left").addEventListener("click", () => left_input())
-    window.addEventListener("DOMContentLoaded", async () => checkLoggedIn())
-    // document.querySelector(".loginBtn").addEventListener("click",() => change_page("login"))
+    document.querySelector(".loginBtn").addEventListener("click",() => change_page("login"))
 }
 
 
