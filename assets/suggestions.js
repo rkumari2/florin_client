@@ -35,11 +35,11 @@ function createPost(id,title,category,desc){
 }
 
 function resolveCategory(cat){
-    if(cat === "publicservices"){
+    if(cat === "Public Services" || cat === "publicservices"){
         return 1;
-    }else if(cat === "recycling"){
+    }else if(cat === "Recycling" || cat === "recycling"){
         return 2;
-    }else if(cat === "landscape"){
+    }else if(cat === "Landscape" || cat === "landscape"){
         return 3;
     }else{
         return 4;
@@ -115,6 +115,18 @@ async function loadPostsFromCategory(){
     
 }
 
+async function getUserId(){
+    const sessionToken = sessionStorage.getItem("token")
+    const response = await fetch("http://localhost:3000/users/tokens")
+    const tokens = await response.json()
+
+    for(t in tokens){
+        if(tokens[t].token === sessionToken){
+            return tokens[t].user_id;
+        }
+    }
+}
+
 async function postSuggestion(e){
     e.preventDefault()
 
@@ -126,6 +138,8 @@ async function postSuggestion(e){
 
     const catIdx = resolveCategory(category);
 
+    const userId = await getUserId()
+
     if(titleEntry.trim().length > 0 && descEntry.trim().length >0){
         const options = {
             method:"POST",
@@ -134,10 +148,11 @@ async function postSuggestion(e){
                 category_name:category,
                 title:titleEntry,
                 content:descEntry,
-                user_id:1
+                user_id:userId
             })
         }
         const response = await fetch(`http://localhost:3000/categories/${catIdx}/suggestions`,options)
+        const resp = response.json()
         destroyPosts()
         loadAllSuggestions()
     }
