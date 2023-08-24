@@ -9,6 +9,11 @@ function changeTarget(card){
     }
 }
 
+function resizePosts(){
+    const postContainer = document.querySelector(".suggestions")
+    postContainer.computedStyleMap.height = "90%"
+}
+
 function createPost(id,title,category,desc){
     const parent = document.createElement("div")
     parent.classList.add("post")
@@ -114,4 +119,4 @@ async function postSuggestion(e){
     e.target.content.value = "";
 }
 
-module.exports = {changeTarget,loadAllSuggestions, postSuggestion,loadPostsFromCategory,destroyPosts}
+module.exports = {changeTarget,resizePosts,loadAllSuggestions, postSuggestion,loadPostsFromCategory,destroyPosts}

@@ -168,7 +168,7 @@ body *{
 }
 
 .lower-container{
-    height: 690px;
+    height: 850px;
     display: flex;
     width: 100%;
     justify-content: space-evenly;

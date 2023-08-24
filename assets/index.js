@@ -1,5 +1,5 @@
 const { change_page ,left_input,right_input} = require("./navigation")
-const {changeTarget,loadAllSuggestions,postSuggestion,loadPostsFromCategory,destroyPosts} = require("./suggestions")
+const {changeTarget,resizePosts,loadAllSuggestions,postSuggestion,loadPostsFromCategory,destroyPosts} = require("./suggestions")
 
 window.addEventListener("resize", () => width = window.innerWidth)
 
@@ -21,4 +21,5 @@ if(window.location.href.includes("suggestions.html")){
     }))
     window.addEventListener("load", async ()=> loadAllSuggestions())
     document.getElementById("post").addEventListener("submit",postSuggestion)
+    window.addEventListener("resize", () => resizePosts())
 }
