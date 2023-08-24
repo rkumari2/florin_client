@@ -1,3 +1,27 @@
+:root{
+    --darkgreyblue: #425370;
+    --tealblue: #7a87d3;
+    --lightblue: #acc3f8;
+    --greyblue: #5d74db;
+    --softpink: #ff8995;
+    --purpleblue: #7b8eff;
+    --hardblue: #465eec;
+    --lightestblue: rgb(211, 229, 231);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+body *{
+    font-family: 'Oswald', sans-serif;
+}
+
 header{
     display: flex;
     background-color: var(--lightestblue);
@@ -10,7 +34,8 @@ header{
 }
 
 header>img{
-    padding: 20px 5px;
+    padding: 20px 100px;
+    transform: scale(150%);
 }
 
 .navbar{
@@ -61,6 +86,10 @@ a::before{
     width: 35%;
 }
 
+#navregister::before{
+    width: 45%;
+}
+
 ul:hover>a::before{
     transform-origin: 0;
     animation: hoverbar-in 0.3s forwards;
@@ -77,15 +106,15 @@ ul:hover>a::before{
 }
 
 .question{
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--darkgreyblue);
     color: whitesmoke;
     border-radius: 50%;
-    margin: 10px 30px 10px 30px ;
+    margin: 15px 30px 10px 30px ;
     transition: 0.1s ease-in-out;
 }
 
@@ -114,4 +143,8 @@ footer{
 footer>*{
     font-size: 1rem;
     padding: 0px 20px 0px 20px;
+}
+
+footer>img{
+    transform: scale(0.15);
 }

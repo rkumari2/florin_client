@@ -3,9 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Suggestions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200&family=Special+Elite&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/suggestions.css">
+    <link rel="stylesheet" href="./assets/topbottom.css">
+    <script src="./bundle.js" defer></script>
 </head>
 <body>
+    <header>
+        <img src="./assets/images/florin_logo.png" alt="Florin County Council",id="council-logo">
+        <div class="navbar">
+            <ul class="nav"><a href="./index.html"  id="navindex">Home</a></ul>
+            <ul class="nav"><a href="./suggestions.html" id="navsuggestions">Suggestions</a></ul>
+            <ul class="nav"><a href="./login.html" id="navlogin">Log In</a></ul>
+            <ul class="nav"><a href="./register.html" id="navregister">Register</a></ul>
+            <div class="question">?</div>
+        </div>
+    </header>
+    <div class="main-page">
+        <section class="upper-container">
+            <div class="topbar">
+                <h2>Suggestions</h2>
+                <div class="searchbar">
+                    <form id="search-form">
+                        <input type="text" id="search" name="search" placeholder="Search" required>
+                        <input type="submit" value="Submit" id="searchSubmit">
+                    </form>
+                </div>
+            </div>
+            <h3>Topics</h3>
+            <div class="cards">
+                <div class="card" id="publicservices"><h4>Public Services</h4></div>
+                <div class="card" id="recycling"><h4>Recycling</h4></div>
+                <div class="card" id="landscape"><h4>Landscape</h4></div>
+                <div class="card" id="skills"><h4>Skills Share</h4></div>
+            </div>
+        </section>
+        <section class="lower-container">
+            <div class="suggestions">
+            </div>
+            <div class="post-suggestion">
+                <h3>Post a Suggestion</h3>
+                <p id="guidance">Guidance</p>
+                <form id="post">
+                    <div id="top-inputs">
+                        <input type="text" id="title" name="title" placeholder="Title" required>
+                        <select name="category" id="category" required>
+                            <option value="Public Services">Public Services</option>
+                            <option value="Recycling">Recycling</option>
+                            <option value="Landscape">Landscape</option>
+                            <option value="Skills">Skill Share</option>
+                        </select>
+                    </div>
+                    <textarea maxlength="200" ="content" id="content" cols="30" rows="10" placeholder="Suggestion" required></textarea>
+                    <input type="submit" value="Submit" id="submit">
+                </form>
+            </div>
     
+        </section>
+    </div>
+    <footer>
+        <!-- <img src="./assets/images/florin_logo.png" alt="littlelogo"> -->
+        <h3>Florin Council</h3>
+    </footer>
 </body>
 </html>

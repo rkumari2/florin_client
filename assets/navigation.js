@@ -1,5 +1,5 @@
 function change_page(page){
-    location.href = `${page}.html`;
+    window.location.href = `${page}.html`;
 }
 
 function updateClasses(curr,next){
