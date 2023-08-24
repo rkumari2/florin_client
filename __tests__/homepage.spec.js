@@ -1,5 +1,9 @@
 const {renderDOM} = require("./helpers")
 
+const fetch = require("jest-fetch-mock")
+
+global.fetch = fetch
+
 let dom;
 let document;
 

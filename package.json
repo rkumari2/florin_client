@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "concurrently \"watchify ./assets/index.js -o bundle.js --debug\" \"live-server\"",
     "start": "watchify ./assets/index.js -o bundle.js",
-    "test": "jest --watchAll",
+    "test": "jest --watchAll --verbose",
     "coverage": "jest --coverage"
   },
   "keywords": [],

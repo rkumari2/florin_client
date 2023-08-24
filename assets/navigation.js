@@ -1,7 +1,3 @@
-function change_page(page){
-    window.location.href = `${page}.html`;
-}
-
 function updateClasses(curr,next){
     curr.classList.remove("current-slide")
     next.classList.add("current-slide")
@@ -46,4 +42,4 @@ function right_input(){
     updateClasses(currentSlide,nextSlide)
 }
 
-module.exports = {change_page,left_input,right_input}
+module.exports = {left_input,right_input}
