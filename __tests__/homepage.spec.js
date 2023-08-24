@@ -2,6 +2,7 @@ const {renderDOM} = require("./helpers")
 
 let dom;
 let document;
+let windowSpy
 
 describe("index.html",() => {
     beforeEach(async () => {
@@ -26,6 +27,11 @@ describe("index.html",() => {
         const navbar = document.querySelector(".navbar")
         const home = navbar.querySelector("#navlogin").href.split("/");
         expect(home[home.length-1]).toBe("login.html")
+    })
+    it("Navbar contains link to Register.",()=>{
+        const navbar = document.querySelector(".navbar")
+        const home = navbar.querySelector("#navregister").href.split("/");
+        expect(home[home.length-1]).toBe("register.html")
     })
     
     it("Image 0 loads with 'current-slide' class.",()=>{
@@ -75,3 +81,4 @@ describe("index.html",() => {
         expect(slides[0].className).toContain("current-slide")
     })
 })
+
