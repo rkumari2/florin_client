@@ -55,16 +55,47 @@ function destroyPosts(){
     }
 }
 
+async function findBySubString(e){
+    e.preventDefault();
+    destroyPosts();
+    const suggCont = document.querySelector(".suggestions")
+    const subString = e.target.search.value;
+    const response = await fetch("http://localhost:3000/suggestions")
+    const posts = await response.json()
+
+    const queriedPosts = [];
+    posts.forEach(post => {
+        if(post.title.toLowerCase().includes(subString.toLowerCase())){
+            queriedPosts.push(post)
+        }else if(post.category_name.toLowerCase().includes(subString.toLowerCase())){
+            queriedPosts.push(post)
+        }else if(post.content.toLowerCase().includes(subString.toLowerCase())){
+            queriedPosts.push(post)
+        }
+    })
+    queriedPosts.forEach(post => {
+        const newPost = createPost(post.id,post.title,post.category_name,post.content)
+        suggCont.appendChild(newPost)
+    })
+}
+
+
 // GET ALL SUGGESTIONS
 async function loadAllSuggestions(){
     const suggestionsContainer = document.querySelector(".suggestions")
 
-    const response = await fetch("http://localhost:3000/suggestions")
-    const posts = await response.json()
-    posts.forEach(post => {
+    try {
+        const response = await fetch("http://localhost:3000/suggestions")
+        const posts = await response.json()
+        posts.forEach(post => {
         const newPost = createPost(post.id,post.title,post.category_name,post.content)
         suggestionsContainer.appendChild(newPost)
     })
+    } catch (err) {
+        console.log("Rendering before loaded content.", err.message)
+    }
+
+    
 }
 
 async function loadPostsFromCategory(){
@@ -114,4 +145,4 @@ async function postSuggestion(e){
     e.target.content.value = "";
 }
 
-module.exports = {changeTarget,loadAllSuggestions, postSuggestion,loadPostsFromCategory,destroyPosts}
+module.exports = {changeTarget,findBySubString,loadAllSuggestions, postSuggestion,loadPostsFromCategory,destroyPosts}

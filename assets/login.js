@@ -2,7 +2,6 @@ const submitButton = document.getElementById('login-button')
 
 
 document.getElementById("form").addEventListener("submit", async (e) => {
-    console.log('WORKING');
     e.preventDefault();
     const form = new FormData(e.target);
     const uIsValid = validateUsername(form.get("username"));
@@ -31,7 +30,7 @@ document.getElementById("form").addEventListener("submit", async (e) => {
     const data = await response.json();
 
     if (response.status == 200) {
-        localStorage.setItem("token", data.token);
+        sessionStorage.setItem("token", data.token);
         console.log(data.token) // to check 
         window.location.assign("suggestions.html");
     } else {

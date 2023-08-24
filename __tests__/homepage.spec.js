@@ -1,8 +1,11 @@
 const {renderDOM} = require("./helpers")
 
+const fetch = require("jest-fetch-mock")
+
+global.fetch = fetch
+
 let dom;
 let document;
-let windowSpy
 
 describe("index.html",() => {
     beforeEach(async () => {
@@ -81,4 +84,3 @@ describe("index.html",() => {
         expect(slides[0].className).toContain("current-slide")
     })
 })
-
