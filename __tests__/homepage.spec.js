@@ -2,7 +2,6 @@ const {renderDOM} = require("./helpers")
 
 let dom;
 let document;
-let windowSpy
 
 describe("index.html",() => {
     beforeEach(async () => {
@@ -81,4 +80,3 @@ describe("index.html",() => {
         expect(slides[0].className).toContain("current-slide")
     })
 })
-

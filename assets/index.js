@@ -4,7 +4,7 @@ const {changeTarget,loadAllSuggestions,postSuggestion,loadPostsFromCategory,dest
 window.addEventListener("resize", () => width = window.innerWidth)
 
 // HOME PAGE
-if(window.location.href.includes("index.html")){
+if(window.location.href.includes("index.html") || !(location.href.includes("html"))){
     document.getElementById("c_right").addEventListener("click", () => right_input())
     document.getElementById("c_left").addEventListener("click", () => left_input())
     document.querySelector(".loginBtn").addEventListener("click",() => change_page("login"))
@@ -18,7 +18,7 @@ if(window.location.href.includes("suggestions.html")){
         destroyPosts()
         changeTarget(card);
         loadPostsFromCategory();
-}))
+    }))
     window.addEventListener("load", async ()=> loadAllSuggestions())
     document.getElementById("post").addEventListener("submit",postSuggestion)
 }
