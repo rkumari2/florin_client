@@ -4,28 +4,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/style.css">
+    <link rel="stylesheet" href="./assets/topbottom.css">
+    <link rel="stylesheet" href="./assets/register.css">
     <script src="./assets/register.js" defer></script>
     <title>Register</title>
 </head>
 <body>
     <header>
-        <h1>Register</h1>
+        <img src="./assets/images/florin_logo.png" alt="Florin County Council",id="council-logo">
+        <div class="navbar">
+            <ul class="nav"><a href="./index.html"  id="navindex">Home</a></ul>
+            <ul class="nav"><a href="./suggestions.html" id="navsuggestions">Suggestions</a></ul>
+            <ul class="nav"><a href="./login.html" id="navlogin">Log In</a></ul>
+            <ul class="nav"><a href="./register.html" id="navregister">Register</a></ul>
+            <div class="question">?</div>
+        </div>
     </header>
-    <hr />
+
     <main>
-        <form id="register-form">
-            <fieldset>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username">
-            </fieldset>
-            <fieldset>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password">
-            </fieldset>
-            <input type="submit" value="Register">
-        </form>
-        <p>Already registered? <a href="./login.html">Log in here</a>.</p>
+        <div id="'img-container">
+            <img id='bus-image' src="./assets//images/signup.jpg" alt="">
+        </div>
+
+
+        <div id="form-container">
+            <h2>Register</h2>
+            <form id="form">
+                <input type="text" id="username" name="username" placeholder="Username">
+                <input type="password" id="password" name="password" placeholder="Password">
+                <input type="submit" value="Register" id="register-btn">
+            </form>
+            <div id="login">
+                <p>Already Registered? <a id="link-login" href="./login.html">Log in here</a></p>
+            </div>
+        </div>
     </main>
+    <footer>
+        <!-- <img src="./assets/images/florin_logo.png" alt="littlelogo"> -->
+        <h3>Florin Council</h3>
+    </footer>
 </body>
 </html>
