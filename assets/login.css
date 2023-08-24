@@ -4,7 +4,6 @@
 
 .main_section {
     display: flex;
-    background-color: aqua;
     flex-direction: row;
     height: 89vh;
 }
@@ -13,7 +12,6 @@
 .image_left {
     height: 100%;
     width: 100%;
-    background-color: yellow;
 }
 
 .form_section {
@@ -57,6 +55,7 @@
 
 input {
     padding: 10%;
+    font-size: large;
 }
 
 /* .login_input {
@@ -68,3 +67,11 @@ input {
     justify-content: center;
     width: 100%;
 }
+
+
+.transition-fade {
+    opacity: 1;
+    transition: 500ms;
+    transform: translateX(0);
+    transform-origin: left;
+  }

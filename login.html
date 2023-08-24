@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="./assets/style.css">
     <link rel="stylesheet" href="./assets/topbottom.css">
     <link rel="stylesheet" href="./assets/login.css">
-    <script src="./bundle.js" defer></script>
+    <script src="./assets/login.js" defer></script>
+    <!-- <script src="./bundle.js" defer></script> -->
 </head>
 <body>
     <!-- NAVBAR CONTENT -->
@@ -26,24 +27,25 @@
     <!-- END OF NAVBAR CONTENT -->
     <section class="main_section">
         <div class="image_left">
-            <img src="./assets/images/samuel-girven-vOZfwNnE8yA-unsplash.jpg" alt="nature" class="login-picture">
+            <!-- <img src="./assets/images/samuel-girven-vOZfwNnE8yA-unsplash.jpg" alt="nature" class="login-picture"> -->
+            <img src="./Screenshot 2023-08-24 at 09.22.41.png" alt="logo" class="login-picture">
         </div>
-        <div class="form_section">
+        <form class="form_section" id="form_section">
             <h2 class="login_h2">Log in</h2>
             <div class="input-group mb-3" id="username_container">
-                <input type="text" class="form-control login-input" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="username-input">
+                <input type="text" class="form-control login-input" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="username-input" name="username">
               </div>
             <div class="input-group mb-3" id="password_container">
-                <input type="text" class="form-control login-input" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" id="password-input">
+                <input type="password" class="form-control login-input" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" id="password-input" name="password">
               </div>
             <div class="subtext_container">
                 <div class="helper_link">Forgot Credentials?</div>
                 <div class="helper_link">Help</div>
             </div>
             <div class="button_container">
-                <button id="login-button">Login</button>
+                <button id="login-button" type="submit">Login</button>
             </div>
-        </div>
+        </form>
     </section>
     <!-- FOOTER CONTENT -->
     <footer>

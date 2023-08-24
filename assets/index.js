@@ -1,5 +1,7 @@
 const { change_page ,left_input,right_input} = require("./navigation")
 
+const swup = new Swup()
+
 window.addEventListener("resize", () => width = window.innerWidth)
 
 document.getElementById("c_right").addEventListener("click", () => right_input())
