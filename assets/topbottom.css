@@ -52,6 +52,20 @@ ul{
     position: relative;
 }
 
+#navusername{
+    display: none;
+    cursor: default;
+}
+
+#navusername::before{
+    display: none;
+}
+
+#logout{
+    display: none;
+}
+
+
 a,a:visited{
     text-decoration: none;
     color: black;
@@ -88,6 +102,10 @@ a::before{
 
 #navregister::before{
     width: 45%;
+}
+
+#navlogout::before{
+    width: 42%;
 }
 
 ul:hover>a::before{

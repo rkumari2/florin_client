@@ -2,7 +2,6 @@ const submitButton = document.getElementById('login-button')
 
 
 document.getElementById("form").addEventListener("submit", async (e) => {
-    console.log('WORKING');
     e.preventDefault();
     const form = new FormData(e.target);
     const uIsValid = validateUsername(form.get("username"));
