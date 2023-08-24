@@ -3,12 +3,17 @@
 const submitButton = document.getElementById('login-button')
 
 
-document.getElementById("form_section").addEventListener("submit", async (e) => {
+document.getElementById("form").addEventListener("submit", async (e) => {
     console.log('WORKING');
     e.preventDefault();
     const form = new FormData(e.target);
-    const userField = e.target.username.value;
-    const passField = e.target.password.value
+    const uIsValid = validateUsername(form.get("username"));
+    const pIsValid = validatePassword(form.get("password"));
+
+    if(!uIsValid || !pIsValid) {
+        alert('Invalid Username or Password.')
+        return;
+    }
 
     const options = {
         method: "POST",
@@ -23,7 +28,6 @@ document.getElementById("form_section").addEventListener("submit", async (e) => 
     }
 
     console.log(options);
-    console.log(userField, passField);
 
     const response = await fetch("insert URL", options);
     const data = await response.json();
@@ -64,16 +68,10 @@ const validateUsername = (userName) => {
     if(hasWhiteSpace(userName)){
         return false;
     }
-    
-    if(isLowerCase(userName)){
-        return false;
-    }
 
     if(isUpperCase(userName)){
         return false;
     }
-
-
 
     return true;
 }
@@ -84,10 +82,6 @@ const validatePassword = (password) => {
     }
     
     if(hasWhiteSpace(password)){
-        return false;
-    }
-
-    if(isLowerCase(password)){
         return false;
     }
 
