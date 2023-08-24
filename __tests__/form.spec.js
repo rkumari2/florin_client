@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jsdom
+ */
+
 const login = require('../assets/login');
 
 let dom;
