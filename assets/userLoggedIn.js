@@ -7,7 +7,7 @@ const checkLoggedIn = async () =>{
     }
     
     if(token.length > 0){
-        const response = await fetch("http://localhost:3000/users/tokens")
+        const response = await fetch("https://florin-server-ijt6.onrender.com/users/tokens")
         const respToken = await response.json()
         let user = "";
 
