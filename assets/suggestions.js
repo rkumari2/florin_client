@@ -9,11 +9,6 @@ function changeTarget(card){
     }
 }
 
-function resizePosts(){
-    const postContainer = document.querySelector(".suggestions")
-    postContainer.computedStyleMap.height = "90%"
-}
-
 function createPost(id,title,category,desc){
     const parent = document.createElement("div")
     parent.classList.add("post")
@@ -59,6 +54,31 @@ function destroyPosts(){
         }
     }
 }
+
+async function findBySubString(e){
+    e.preventDefault();
+    destroyPosts();
+    const suggCont = document.querySelector(".suggestions")
+    const subString = e.target.search.value;
+    const response = await fetch("http://localhost:3000/suggestions")
+    const posts = await response.json()
+
+    const queriedPosts = [];
+    posts.forEach(post => {
+        if(post.title.toLowerCase().includes(subString.toLowerCase())){
+            queriedPosts.push(post)
+        }else if(post.category_name.toLowerCase().includes(subString.toLowerCase())){
+            queriedPosts.push(post)
+        }else if(post.content.toLowerCase().includes(subString.toLowerCase())){
+            queriedPosts.push(post)
+        }
+    })
+    queriedPosts.forEach(post => {
+        const newPost = createPost(post.id,post.title,post.category_name,post.content)
+        suggCont.appendChild(newPost)
+    })
+}
+
 
 // GET ALL SUGGESTIONS
 async function loadAllSuggestions(){
@@ -119,4 +139,4 @@ async function postSuggestion(e){
     e.target.content.value = "";
 }
 
-module.exports = {changeTarget,resizePosts,loadAllSuggestions, postSuggestion,loadPostsFromCategory,destroyPosts}
+module.exports = {changeTarget,findBySubString,loadAllSuggestions, postSuggestion,loadPostsFromCategory,destroyPosts}

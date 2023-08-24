@@ -1,5 +1,5 @@
 const { change_page ,left_input,right_input} = require("./navigation")
-const {changeTarget,resizePosts,loadAllSuggestions,postSuggestion,loadPostsFromCategory,destroyPosts} = require("./suggestions")
+const {changeTarget,findBySubString,loadAllSuggestions,postSuggestion,loadPostsFromCategory,destroyPosts} = require("./suggestions")
 
 window.addEventListener("resize", () => width = window.innerWidth)
 
@@ -19,7 +19,7 @@ if(window.location.href.includes("suggestions.html")){
         changeTarget(card);
         loadPostsFromCategory();
     }))
+    document.getElementById("search-form").addEventListener("submit",findBySubString)
     window.addEventListener("load", async ()=> loadAllSuggestions())
     document.getElementById("post").addEventListener("submit",postSuggestion)
-    window.addEventListener("resize", () => resizePosts())
 }
