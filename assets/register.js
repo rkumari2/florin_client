@@ -2,6 +2,13 @@ document.getElementById("form").addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const form = new FormData(e.target);
+    const username = form.get("username"); 
+    const password = form.get("password")
+
+    if (!username || !password) {
+        alert("Cannot register without username or password")
+        return; 
+    }
 
     const options = {
         method: "POST",
@@ -10,8 +17,8 @@ document.getElementById("form").addEventListener("submit", async (e) => {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            username: form.get("username"),
-            password: form.get("password")
+            username: username, 
+            password: password
         })
     }
 

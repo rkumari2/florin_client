@@ -1,5 +1,3 @@
-
-
 const submitButton = document.getElementById('login-button')
 
 
@@ -29,7 +27,7 @@ document.getElementById("form").addEventListener("submit", async (e) => {
 
     console.log(options);
 
-    const response = await fetch("insert URL", options);
+    const response = await fetch("http://localhost:3000/users/login", options);
     const data = await response.json();
 
     if (response.status == 200) {
