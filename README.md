@@ -83,7 +83,7 @@ volumes:
 2. In this file paste the following
 `PORT = 3000 DB_URL = <Paste the Database URL format from docker TEST_DB_URL = <Repeat the process of making a new database if you need to do testing> BCRYPT_SALT_ROUNDS = 12`
 3. Run the commands `cd server` & `npm run dev` in the terminal.
-4. Open the project using live server from the `index.html` file located inside the client and homepage directories.
+4. Open the project using live server from the `index.html` file.
 
 # Running the App From the Browser
 
