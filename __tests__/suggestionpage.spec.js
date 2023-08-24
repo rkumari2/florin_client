@@ -1,5 +1,6 @@
-const sugg = require("../assets/suggestions")
+global.fetch = require("jest-fetch-mock")
 
+const sugg = require("../assets/suggestions")
 const {renderDOM} = require("./helpers")
 _SUGGESTIONS = {data:[{"id":1,"category_name":"Public Services","title":"Rubbish!","content":"Man it's so bad!","user_id":1},{"id":2,"category_name":"Recycling","title":"Trial Barbara!","content":"Trial Barbara!","user_id":1},{"id":6,"category_name":"Public Services","title":"www","content":"aaa","user_id":1},{"id":7,"category_name":"Landscape","title":"www","content":"aaa","user_id":1},{"id":8,"category_name":"Public Services","title":"Is this thing on?","content":"I dunno man","user_id":1},{"id":9,"category_name":"Recycling","title":"Wowie","content":"I dunno manwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww","user_id":1},{"id":10,"category_name":"Skills","title":"beans","content":"eggs","user_id":1},{"id":11,"category_name":"Skills","title":"www","content":"aaaaaaaa","user_id":1},{"id":12,"category_name":"Recycling","title":"I can add more!","content":"PENIS","user_id":1}]}
 
@@ -7,10 +8,12 @@ let dom;
 let document;
 
 describe("suggestions.html",() => {
+    beforeEach(()=>{
+        fetch.resetMocks()
+    })
     beforeEach(async () => {
         dom = await renderDOM("./suggestions.html")
         document = await dom.window.document;
-        fetch.mockClear()
     })
     it("Has a navbar.",()=>{
         const navbar = document.querySelector(".navbar")

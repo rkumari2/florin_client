@@ -7,7 +7,7 @@ window.addEventListener("resize", () => width = window.innerWidth)
 if(window.location.href.includes("index.html") || !(location.href.includes("html"))){
     document.getElementById("c_right").addEventListener("click", () => right_input())
     document.getElementById("c_left").addEventListener("click", () => left_input())
-    document.querySelector(".loginBtn").addEventListener("click",() => change_page("login"))
+    // document.querySelector(".loginBtn").addEventListener("click",() => change_page("login"))
 }
 
 
