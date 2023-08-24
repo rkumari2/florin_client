@@ -1,8 +1,6 @@
 const {left_input,right_input} = require("./navigation")
 const {changeTarget,findBySubString,loadAllSuggestions,postSuggestion,loadPostsFromCategory,destroyPosts} = require("./suggestions")
 
-window.addEventListener("resize", () => width = window.innerWidth)
-
 // HOME PAGE
 if(window.location.href.includes("index.html") || !(location.href.includes("html"))){
     document.getElementById("c_right").addEventListener("click", () => right_input())

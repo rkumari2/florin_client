@@ -84,12 +84,18 @@ async function findBySubString(e){
 async function loadAllSuggestions(){
     const suggestionsContainer = document.querySelector(".suggestions")
 
-    const response = await fetch("http://localhost:3000/suggestions")
-    const posts = await response.json()
-    posts.forEach(post => {
+    try {
+        const response = await fetch("http://localhost:3000/suggestions")
+        const posts = await response.json()
+        posts.forEach(post => {
         const newPost = createPost(post.id,post.title,post.category_name,post.content)
         suggestionsContainer.appendChild(newPost)
     })
+    } catch (err) {
+        console.log("Rendering before loaded content.", err.message)
+    }
+
+    
 }
 
 async function loadPostsFromCategory(){
