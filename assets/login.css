@@ -1,0 +1,108 @@
+:root{
+    --darkgreyblue: #425370;
+    --tealblue: #7a87d3;
+    --lightblue: #acc3f8;
+    --greyblue: #5d74db;
+    --softpink: #ff8995;
+    --purpleblue: #7b8eff;
+    --hardblue: #465eec;
+    --lightestblue: rgb(211, 229, 231);
+}
+
+ul {
+    font-weight: lighter;
+}
+
+main {
+    display: flex;
+    height: 87.5vh;
+    justify-content: space-between;
+}
+
+#img-container {
+    background-color: azure;
+    width: 50vw;
+}
+
+#form-container {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 70px;
+    margin-bottom: 100px;
+}
+
+h2 {
+    align-items: center;
+    font-weight: 400;
+    font-size: 50px;
+    margin-bottom: 0;
+}
+
+#form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 0;
+}
+
+#login {
+    font-weight: 100;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+#link-register {
+    text-decoration: underline 1px;
+}
+
+#link-register:hover {
+    color: blue;
+}
+
+#bus-image {
+   width: 50vw;
+   height: 87.5vh;
+}
+
+
+#username, #password {
+    width: 400px;
+    height: 45px;
+    padding-left: 15px;
+}
+
+#username {
+    margin-bottom: 10px;
+}
+
+#username::placeholder, #password::placeholder {
+    font-size: 25px;
+    font-weight: lighter;
+}
+
+#login-btn {
+    height: 80px;
+    width: 150px;
+    font-size: 30px;
+    font-weight: lighter;
+    border: none;
+    background-color: var(--darkgreyblue);
+    color: white;
+    margin-top: 20px;
+}
+
+#login-btn:hover {
+    background-color: var( --lightblue);
+    color: black;
+}
+
+input {
+    font-size: 25px;
+    font-weight: lighter;
+}
