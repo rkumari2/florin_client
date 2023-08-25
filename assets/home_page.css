@@ -105,7 +105,7 @@ body *{
 }
 
 #skills{
-    transform: translateY(-25%) translateX(45px);
+    transform: translateY(-40%) translateX(45px);
 }
 
 #c_left,
@@ -178,7 +178,7 @@ body *{
 
 .card>img{
     object-fit: cover;
-    max-height: 110%;
+    width: 120%;
     transform: translateY(-5%);
 }
 

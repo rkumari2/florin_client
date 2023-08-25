@@ -99,6 +99,7 @@ const deleteCurrentUser = async (user) => {
 const checkIfGuest = () => {
     if(!(sessionStorage.getItem("token"))){
         document.getElementById("post").style.display = "none";
+        document.getElementById("suggTitle").textContent = "Log In To Make a Suggestion"
     }
 }
 
